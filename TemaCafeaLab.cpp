@@ -20,7 +20,7 @@ public:
     }
 
     void initializare(int cafele, int zahar) {
-        totalNrCafele = cafele;
+        totalNrCafele =cafele;
         totalNrCuburiZahar = zahar;
         sumaIncasari = 0.0;
     }
