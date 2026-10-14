@@ -10,19 +10,19 @@ void afisareCont(const string& numeTitular, double sold) {
 void depunere(double& sold, double suma = 100.0) {
     if (suma > 0) {
         sold += suma;
-        cout << "Depunere reușită de " << suma << " RON.\n";
+        cout << "Depunere reusita de " << suma << " RON.\n";
     } else {
-        cout << "Suma pentru depunere trebuie să fie pozitivă!\n";
+        cout << "Suma depusa trebuie să fie pozitiva!\n";
     }
 }
 
 bool retragere(double& sold, double suma) {
     if (suma > 0 && sold >= suma) {
         sold -= suma;
-        cout << "Retragere reușită de " << suma << " RON.\n";
+        cout << "Retragere reusita de " << suma << " RON.\n";
         return true;
     } else {
-        cout << "Retragere eșuată: Fonduri insuficiente sau sumă invalidă!\n";
+        cout << "Retragere esuata: Fonduri insuficiente sau suma invalida!\n";
         return false;
     }
 }
@@ -30,10 +30,10 @@ bool retragere(double& sold, double suma) {
 bool retragere(double& sold, double suma, double limitaMaxima) {
     if (suma > 0 && suma <= limitaMaxima && sold >= suma) {
         sold -= suma;
-        cout << "Retragere cu limită reușită de " << suma << " RON (limită: " << limitaMaxima << ").\n";
+        cout << "Retragere cu limita reusita de " << suma << " RON (limita: " << limitaMaxima << ").\n";
         return true;
     } else {
-        cout << "Retragere eșuată: Fonduri insuficiente, sumă invalidă sau limită depășită!\n";
+        cout << "Retragere esuata: Fonduri insuficiente, suma invalida sau limita depasita!\n";
         return false;
     }
 }
@@ -42,19 +42,19 @@ bool transfer(double& soldSursa, double& soldDestinatie, double suma) {
     if (suma > 0 && soldSursa >= suma) {
         soldSursa -= suma;
         soldDestinatie += suma;
-        cout << "Transfer reușit de " << suma << " RON.\n";
+        cout << "Transfer reusit de " << suma << " RON.\n";
         return true;
     } else {
-        cout << "Transfer eșuat: Fonduri insuficiente sau sumă invalidă în contul sursă!\n";
+        cout << "Transfer esuat: Fonduri insuficiente sau suma invalida!\n";
         return false;
     }
 }
 
 int main() {
-    string titular1 = "Ana Popescu";
+    string titular1 = "Mara Anghel";
     double sold1 = 1500.0;
 
-    string titular2 = "Mihai Ionescu";
+    string titular2 = "Mihai Tomescu";
     double sold2 = 500.0;
 
     cout << "--- STARE INITIALA ---\n";
@@ -74,7 +74,7 @@ int main() {
     retragere(sold1, 5000.0);
     cout << "\n";
 
-    cout << "--- TESTARE SUPRADEFINIRE RETRAGERE (CU LIMITĂ) ---\n";
+    cout << "--- TESTARE SUPRADEFINIRE RETRAGERE (CU LIMITA) ---\n";
     retragere(sold1, 400.0, 500.0);
     retragere(sold1, 600.0, 500.0);
     cout << "\n";
